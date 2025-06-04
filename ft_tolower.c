@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 19:21:31 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 14:06:04 by emkir            ###   ########.fr       */
+/*   Created: 2025/05/31 17:25:23 by emkir             #+#    #+#             */
+/*   Updated: 2025/06/02 14:06:23 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_strdup(const char *s)
+int	ft_tolower(int c)
 {
-	int		i;
-	char	*new_s;
-
-	i = 0;
-	while (s[i])
-		i++;
-	new_s = malloc (sizeof(char) * (i + 1));
-	if (!new_s)
-		return (0);
-	while (i)
-	{
-		*new_s = *s;
-		new_s++;
-		s++;
-		i--;
-	}
-	*new_s = '\0';
+	if ('A' <= c && c <= 'Z')
+		c += 32;
+	return (c);
 }

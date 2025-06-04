@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:40:16 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/01 18:08:43 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/02 16:19:11 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int	i;
 
 	i = 0;
 	while (n)
 	{
-		if (((unsigned char *)s)[i] == c)
-			return ((void *)(s + 1));
+		if (((const unsigned char *)s)[i] == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 		n--;
 	}

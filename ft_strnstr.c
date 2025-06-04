@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:09:08 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/01 18:26:19 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/02 15:09:12 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*strnstr(const char *big,	const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 
 	i = 0;
 	if (!little)
 		return (big);
-	while (len && big)
+	while (len && *big)
 	{
 		if (*little == *big)
 		{

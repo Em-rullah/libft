@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 17:33:00 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/04 11:37:35 by marvin           ###   ########.fr       */
+/*   Created: 2025/06/04 11:25:16 by marvin            #+#    #+#             */
+/*   Updated: 2025/06/04 11:25:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h";
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char*	uns_s1;
 	const unsigned char*	uns_s2;
 
-	uns_s1 = (const char*)s1;
-	uns_s2 = (const char *)s2;
-	while (n && (*uns_s1 || *uns_s2))
+	uns_s1 = (const char *)s1;
+	uns_s2 = (const char*)s2;
+	while (n)
 	{
 		if (*uns_s1 > *uns_s2)
 			return (*uns_s1 - *uns_s2);

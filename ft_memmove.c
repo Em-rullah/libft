@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 19:21:31 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 14:06:04 by emkir            ###   ########.fr       */
+/*   Created: 2025/05/30 16:39:04 by emkir             #+#    #+#             */
+/*   Updated: 2025/05/31 17:31:15 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
-	char	*new_s;
+	char	*src_updated;
+	char	*dest_updated;
 
-	i = 0;
-	while (s[i])
-		i++;
-	new_s = malloc (sizeof(char) * (i + 1));
-	if (!new_s)
-		return (0);
-	while (i)
+	src_updated = (char *)src;
+	dest_updated = (char *)dest;
+	while (n)
 	{
-		*new_s = *s;
-		new_s++;
-		s++;
-		i--;
+		*(dest_updated + n - 1) = *(src_updated + n - 1);
+		n--;
 	}
-	*new_s = '\0';
+	return (dest);
 }

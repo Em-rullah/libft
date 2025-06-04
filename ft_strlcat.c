@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 19:21:31 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 14:06:04 by emkir            ###   ########.fr       */
+/*   Created: 2025/05/31 16:59:51 by emkir             #+#    #+#             */
+/*   Updated: 2025/05/31 17:25:01 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	char	*new_s;
+	int	size_s;
+	int	size_d;
 
-	i = 0;
-	while (s[i])
-		i++;
-	new_s = malloc (sizeof(char) * (i + 1));
-	if (!new_s)
-		return (0);
-	while (i)
+	size_s = ft_strlen(src);
+	size_d = ft_strlen((const char *)dst);
+	if (size == 0 || size <= size_d)
+		return (size + size_s);
+	while (*dst)
 	{
-		*new_s = *s;
-		new_s++;
-		s++;
-		i--;
+		size--;
+		dst++;
 	}
-	*new_s = '\0';
+	while ((size - 1) && *src)
+	{
+		*dst = *src;
+		dst++;
+		src++;
+		size--;
+	}
+	*dst = '\0';
+	return (size_s + size_d);
 }

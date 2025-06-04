@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:26:54 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/01 18:59:09 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:28:07 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		sign;
@@ -35,7 +35,3 @@ int	atoi(const char *nptr)
 	}
 	return (n * sign);
 }
-
-
-
-

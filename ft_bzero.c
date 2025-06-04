@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 19:21:31 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 14:06:04 by emkir            ###   ########.fr       */
+/*   Created: 2025/05/30 16:25:05 by emkir             #+#    #+#             */
+/*   Updated: 2025/05/30 16:38:14 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	char	*new_s;
+	char	*s_updated;
 
-	i = 0;
-	while (s[i])
-		i++;
-	new_s = malloc (sizeof(char) * (i + 1));
-	if (!new_s)
-		return (0);
-	while (i)
+	s_updated = (char *)s;
+	while (n)
 	{
-		*new_s = *s;
-		new_s++;
-		s++;
-		i--;
+		*s_updated = '\0';
+		s_updated++;
+		n--;
 	}
-	*new_s = '\0';
+	return ;
 }
