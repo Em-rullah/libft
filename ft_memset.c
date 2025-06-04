@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 15:31:07 by emkir             #+#    #+#             */
-/*   Updated: 2025/05/31 14:49:38 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/04 17:26:49 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	*ft_memset(void *s, int c, size_t n)
 		s_updated++;
 		n--;
 	}
+	return (s);
 }

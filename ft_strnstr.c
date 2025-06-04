@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:09:08 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 15:09:12 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/04 17:35:24 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	if (!little)
-		return (big);
+		return ((char *)big);
 	while (len && *big)
 	{
 		if (*little == *big)
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			while (little[i] && big[i])
 				i++;
 			if (!little[i])
-				return (big);
+				return ((char *)big);
 			else
 				i = 0;
 		}

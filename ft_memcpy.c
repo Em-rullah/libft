@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:30:26 by emkir             #+#    #+#             */
-/*   Updated: 2025/05/31 17:31:17 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/04 15:14:59 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
-{	
+{
 	const char	*src_updated;
 	char		*dest_updated;
 
-	if (!dest && !src )
+	if (!dest && !src)
 		return (0);
 	src_updated = (const char *)src;
 	dest_updated = (char *)dest;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:40:27 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/02 14:06:20 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/04 17:33:11 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 		i++;
-	i++;
 	while (i)
 	{
 		if (c == s[i])
-			return (s);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (0);
