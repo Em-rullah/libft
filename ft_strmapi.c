@@ -6,7 +6,7 @@
 /*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 16:52:57 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/08 16:54:15 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/08 21:31:42 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!result)
 		return (0);
 	while (s[i])
-	{	
+	{
 		result[i] = (*f)(i, s[i]);
 		i++;
 	}
