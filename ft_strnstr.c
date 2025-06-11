@@ -6,29 +6,32 @@
 /*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:09:08 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/04 17:35:24 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:14:59 by emrullah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 
-	i = 0;
-	if (!little)
+	if (*little == '\0')
 		return ((char *)big);
 	while (len && *big)
 	{
+		i = 0;
 		if (*little == *big)
 		{
-			while (little[i] && big[i])
+			while (len != 0 && little[i] && big[i] && little[i] == big[i])
+			{
+				len--;
 				i++;
+			}
 			if (!little[i])
 				return ((char *)big);
 			else
-				i = 0;
+				len = len + i;
 		}
 		big++;
 		len--;
