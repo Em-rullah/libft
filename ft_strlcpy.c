@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 14:36:50 by emkir             #+#    #+#             */
-/*   Updated: 2025/05/31 17:19:46 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/15 14:34:05 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		*dst = *src;
 		dst++;
 		src++;
+		size--;
 	}
 	*dst = '\0';
 	return (size_src);

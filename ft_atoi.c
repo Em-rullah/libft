@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:26:54 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/02 14:28:07 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/15 14:40:48 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_atoi(const char *nptr)
 			sign = -sign;
 		i++;
 	}
-	while ('0' < nptr[i] && nptr[i] < '9')
+	while ('0' <= nptr[i] && nptr[i] <= '9')
 	{
 		n = 10 * n + (nptr[i] - '0');
 		i++;

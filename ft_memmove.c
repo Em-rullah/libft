@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:39:04 by emkir             #+#    #+#             */
-/*   Updated: 2025/05/31 17:31:15 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/15 14:09:06 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	src_updated = (char *)src;
 	dest_updated = (char *)dest;
+	if (dest < src)
+		return (ft_memcpy(dest_updated, src_updated, n));
 	while (n)
 	{
 		*(dest_updated + n - 1) = *(src_updated + n - 1);

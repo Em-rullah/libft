@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 17:40:27 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/04 17:33:11 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/15 14:38:13 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while ((unsigned char)s[i])
 		i++;
-	while (i)
+	while (!(i < 0))
 	{
 		if ((unsigned char)c == (unsigned char)s[i])
 			return ((char *)&s[i]);

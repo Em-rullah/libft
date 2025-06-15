@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/08 14:47:22 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/15 16:20:41 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ char	**ft_split(char const *s, char c)
 
 	counter_s = 1;
 	i_s = 0;
-	while (ft_strchr(&s[i_s], c))
+	while (s[i_s])
 	{
-		if ((size_t)(ft_strchr(&s[i_s], c) - &s[i_s]) != ft_strlen(&s[i_s]) - 1)
+		if (!(i_s == 0 || i_s == ft_strlen(s) || s[i_s] != c))
 			counter_s++;
-		i_s += ft_strchr(&s[i_s], c) - &s[i_s] + 1;
+		i_s++;
 	}
 	arr_s = (char **)calloc(++counter_s, sizeof(char *));
 	if (!arr_s)
@@ -77,3 +77,6 @@ char	**ft_split(char const *s, char c)
 	}
 	return (arr_s);
 }
+
+
+// DÜZELT DÜZELT DÜZELT DÜZELT
