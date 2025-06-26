@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/15 16:20:41 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/18 18:55:55 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	i_s = 0;
 	while (s[i_s])
 	{
-		if (!(i_s == 0 || i_s == ft_strlen(s) || s[i_s] != c))
+		if (!(i_s == 0 || (size_t)i_s == ft_strlen(s) || s[i_s] != c))
 			counter_s++;
 		i_s++;
 	}
