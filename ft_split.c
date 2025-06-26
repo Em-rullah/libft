@@ -3,80 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/18 18:55:55 by emrul            ###   ########.fr       */
+/*   Updated: 2025/06/26 21:19:14 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	free_memory(char **arr_s)
+static size_t	calc_word(char const*s, char c)
 {
-	int	i_arr_s;
+	size_t	count;
 
-	i_arr_s = 0;
-	while (arr_s[i_arr_s])
+	count = 0;
+	while (*s)
 	{
-		free(arr_s[i_arr_s]);
-		i_arr_s++;
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
+			count++;
+		s++;
 	}
-	free(arr_s);
-	return ;
-}
 
-static int	assign_s(char **arr_s, int counter_s, char const *s, char c)
-{
-	int	i_s;
-	int	i_arr_s;
-
-	i_s = 0;
-	i_arr_s = 0;
-	while (counter_s)
-	{
-		if (counter_s == 1 && !ft_strchr(&s[i_s], c))
-			arr_s[i_arr_s] = ft_substr(s, i_s, ft_strlen(&s[i_s]));
-		else if (counter_s == 1)
-			arr_s[i_arr_s] = ft_substr(s, i_s, ft_strlen(&s[i_s]) - 1);
-		else
-			arr_s[i_arr_s] = ft_substr(s, i_s, ft_strchr(&s[i_s], c) - &s[i_s]);
-		if (!arr_s[i_arr_s])
-			return (0);
-		i_s += ft_strchr(&s[i_s], c) - &s[i_s] + 1;
-		i_arr_s++;
-		counter_s--;
-	}
-	arr_s[i_arr_s] = '\0';
-	return (1);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		counter_s;
-	int		i_s;
-	char	**arr_s;
+	size_t	count;
+	char	**word_arr;
 
-	counter_s = 1;
-	i_s = 0;
-	while (s[i_s])
-	{
-		if (!(i_s == 0 || (size_t)i_s == ft_strlen(s) || s[i_s] != c))
-			counter_s++;
-		i_s++;
-	}
-	arr_s = (char **)calloc(++counter_s, sizeof(char *));
-	if (!arr_s)
-		return (0);
-	i_s = 0;
-	counter_s--;
-	if (!assign_s(arr_s, counter_s, s, c))
-	{
-		free_memory(arr_s);
-		return (0);
-	}
-	return (arr_s);
+	count = calc_word(s, c);
+	word_arr = (char **)malloc(sizeof(char *) * count);
+	return (word_arr);
 }
-
-
-// DÜZELT DÜZELT DÜZELT DÜZELT
