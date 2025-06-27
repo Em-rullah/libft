@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:07:37 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/27 20:42:38 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/27 23:29:37 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 static char	*create_m(long n, int sign)
 {
-	int		digit;
+	int	digit;
 
-	digit = 0;
-	while (n % 10 != 0 || n == 0)
+	digit = 1;
+	while (!(n / 10 == 0))
 	{
-		if (n == 0)
-		{
-			digit++;
-			break ;
-		}
 		digit++;
 		n /= 10;
 	}
@@ -49,7 +44,7 @@ static void	assign_m(char *str_n, long n, int sign)
 		*str_n = '-';
 		str_n++;
 	}
-	while (!(n % 10 == 0))
+	while (base)
 	{
 		*str_n = '0' + n / base;
 		n %= base;
