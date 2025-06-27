@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrullah <emrullah@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:07:37 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/08 16:51:59 by emrullah         ###   ########.fr       */
+/*   Updated: 2025/06/27 20:42:38 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ static char	*create_m(long n, int sign)
 	int		digit;
 
 	digit = 0;
-	while (!(n % 10 == 0))
+	while (n % 10 != 0 || n == 0)
 	{
+		if (n == 0)
+		{
+			digit++;
+			break ;
+		}
 		digit++;
 		n /= 10;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:37:40 by emrul             #+#    #+#             */
-/*   Updated: 2025/06/25 11:56:04 by emrul            ###   ########.fr       */
+/*   Updated: 2025/06/27 20:28:37 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_lstsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-
 	i = 1;
 	tmp = lst->next;
 	while (tmp)
@@ -27,7 +26,5 @@ int	ft_lstsize(t_list *lst)
 		i++;
 		tmp = tmp->next;
 	}
-
 	return (i);
 }
-

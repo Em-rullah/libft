@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:24:34 by emrul             #+#    #+#             */
-/*   Updated: 2025/06/25 11:30:02 by emrul            ###   ########.fr       */
+/*   Updated: 2025/06/27 20:28:41 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_list	*ft_lstnew(void *content)
 	tmp->next = 0;
 	return (tmp);
 }
-
