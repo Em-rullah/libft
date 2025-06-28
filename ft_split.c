@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/27 20:27:56 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/28 00:34:42 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	{
 		tmp = add_words(&s, c);
 		if (!tmp)
-		{	
+		{
 			word_arr[word_i] = 0;
 			free_words(word_arr);
 			return (0);
