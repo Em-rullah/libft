@@ -10,10 +10,8 @@ OBJS = ${SRCS:c=o}
 
 BONUS_OBJS = ${BONUS:c=o}
 
-
-${NAME}: ${OBJS} ${BONUS_OBJS}
-	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
-
+${NAME}: ${OBJS}
+	ar rcs ${NAME} ${OBJS}
 
 ${OBJS}:%.o: %.c
 	gcc ${FLAGS} -c $< -o $@
@@ -31,6 +29,7 @@ fclean:
 
 re: fclean all
 
-bonus: all ${BONUS_OBJS}
+bonus: ${OBJS} ${BONUS_OBJS}
+	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
 .PHONY: all clean fclean re bonus

@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:13 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/27 23:29:41 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/29 03:22:16 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*new_next;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (0);
 	new_lst = (t_list *)malloc(sizeof(t_list));
 	if (!new_lst)

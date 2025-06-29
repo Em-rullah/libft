@@ -6,13 +6,13 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/28 00:34:42 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/29 03:28:45 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	calc_word(char const*s, char c)
+static size_t	calc_word(char const *s, char c)
 {
 	size_t	count;
 

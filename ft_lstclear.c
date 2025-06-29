@@ -6,7 +6,7 @@
 /*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:27:25 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/27 20:28:17 by emkir            ###   ########.fr       */
+/*   Updated: 2025/06/29 04:02:46 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	recursive_clear(t_list *lst, void (*del)(void*))
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!(*lst))
+	if (!lst || !del || !*lst)
 		return ;
 	recursive_clear(*lst, del);
 	*lst = 0;
