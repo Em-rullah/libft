@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 14:07:37 by emrullah          #+#    #+#             */
-/*   Updated: 2025/06/29 01:42:48 by emkir            ###   ########.fr       */
+/*   Updated: 2025/07/01 23:50:31 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static char	*create_m(long n, int sign)
 {
