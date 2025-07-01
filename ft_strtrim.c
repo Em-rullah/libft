@@ -6,7 +6,7 @@
 /*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:37:44 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/01 23:21:53 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/02 00:11:47 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i_str_e;
 	char	*str_trimmed;
 
-	general_i = 0;
 	i_str_s = 0;
 	i_str_e = ft_strlen(s1) - 1;
 	if (!s1 || !set)

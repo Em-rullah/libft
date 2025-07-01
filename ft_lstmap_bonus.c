@@ -6,7 +6,7 @@
 /*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:13 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/01 23:03:25 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/02 00:11:40 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(f(lst->content));
 		if (!new_node)
 		{
-			ft_lstclear(&new_lst, d);
+			ft_lstclear(&new_lst, del);
 			return (0);
 		}
 		ft_lstadd_back(&new_lst, new_node);

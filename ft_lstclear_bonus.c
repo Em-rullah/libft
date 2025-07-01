@@ -6,7 +6,7 @@
 /*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:27:25 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/01 23:00:43 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/02 00:11:02 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	tmp_lst;
+	t_list	*tmp_lst;
 
 	if (!lst)
 		return ;
