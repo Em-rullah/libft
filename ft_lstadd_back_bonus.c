@@ -6,7 +6,7 @@
 /*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:06:38 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/01 21:52:01 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/01 23:00:37 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp_lst;
 
-	if (!new || lst)
+	if (!new || !lst)
 		return ;
 	tmp_lst = *lst;
 	if (!tmp_lst)

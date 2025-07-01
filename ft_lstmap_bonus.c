@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:13 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/29 04:37:48 by emkir            ###   ########.fr       */
+/*   Updated: 2025/07/01 23:03:25 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,20 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*new_next;
+	t_list	*new_node;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (0);
-	new_lst = (t_list *)malloc(sizeof(t_list));
-	if (!new_lst)
-		return (0);
-	new_next = new_lst;
 	while (lst)
 	{
-		new_next->content = f(lst->content);
-		if (!lst->next)
-			break ;
-		new_next->next = (t_list *)malloc(sizeof(t_list));
-		if (!(new_next->next))
+		new_node = ft_lstnew(f(lst->content));
+		if (!new_node)
 		{
-			ft_lstclear(&new_lst, del);
+			ft_lstclear(&new_lst, d);
 			return (0);
 		}
-		new_next = new_next->next;
+		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
 	}
-	new_next->next = 0;
 	return (new_lst);
 }

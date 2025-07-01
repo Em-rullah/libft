@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/29 03:28:45 by emkir            ###   ########.fr       */
+/*   Updated: 2025/07/01 23:30:06 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ char	**ft_split(char const *s, char c)
 		tmp = add_words(&s, c);
 		if (!tmp)
 		{
-			word_arr[word_i] = 0;
 			free_words(word_arr);
 			return (0);
 		}

@@ -6,7 +6,7 @@
 /*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:32:17 by emrul             #+#    #+#             */
-/*   Updated: 2025/07/01 21:52:25 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/01 23:00:33 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new || lst)
+	if (!new || !lst)
 		return ;
 	new->next = *lst;
 	*lst = new;
