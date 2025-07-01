@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
+/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:06:38 by emkir             #+#    #+#             */
-/*   Updated: 2025/06/29 03:23:25 by emkir            ###   ########.fr       */
+/*   Updated: 2025/07/01 21:52:01 by emrul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp_lst;
 
-	tmp_lst = *lst;
-	if (!new)
+	if (!new || lst)
 		return ;
+	tmp_lst = *lst;
 	if (!tmp_lst)
 	{
 		*lst = new;
