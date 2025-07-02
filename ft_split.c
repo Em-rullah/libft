@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:16:14 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/01 23:30:06 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/02 12:06:48 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 
 	count = calc_word(s, c);
 	word_i = 0;
-	word_arr = (char **)malloc(sizeof(char *) * (count + 1));
+	word_arr = (char **)ft_calloc(count + 1, sizeof(char *));
 	if (!word_arr)
 		return (0);
 	while (count)

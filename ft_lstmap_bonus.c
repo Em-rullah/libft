@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emrul <emrul@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emkir <emkir@student.42istanbul.com.tr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:05:13 by emkir             #+#    #+#             */
-/*   Updated: 2025/07/02 00:11:40 by emrul            ###   ########.fr       */
+/*   Updated: 2025/07/02 12:19:41 by emkir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_node;
+	void	*new_content;
 
 	if (!lst || !f || !del)
 		return (0);
+	new_lst = 0;
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
 		if (!new_node)
 		{
+			del(new_content);
 			ft_lstclear(&new_lst, del);
 			return (0);
 		}

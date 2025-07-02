@@ -8,10 +8,9 @@ FLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
-OBJS = ${SRCS:c=o}
+OBJS = ${SRCS:.c=.o}
 
-BONUS_OBJS = ${BONUS:c=o}
-
+BONUS_OBJS = ${BONUS:.c=.o}
 
 all: ${NAME}
 
@@ -26,7 +25,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: ${BONUS_OBJS}
+bonus: all ${BONUS_OBJS}
 	ar rcs ${NAME} ${BONUS_OBJS}
 
 .PHONY: all clean fclean re bonus
